@@ -1,0 +1,20 @@
+[package]
+name = "online"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+grammers-client = "0.4.0"
+grammers-session = "0.4.0"
+grammers-tl-types = {version = "0.4.0", features = ["tl-mtproto"]}
+tokio = "1.21.2"
+anyhow = "1.0.66"
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
